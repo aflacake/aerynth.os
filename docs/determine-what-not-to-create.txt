@@ -1,0 +1,79 @@
+==========
+TIDAK membuat “AI pintar sejati” (di awal)
+==========
+Yang tidak dibuat:
+- Model bahasa besar lokal
+- Belajar mandiri dari semua percakapan
+- “Mengerti perasaan manusia secara mendalam”
+- Analisis psikologis pengguna
+
+Alasan:
+- Berat
+- Tidak stabil
+- Mengubah companion → therapist palsu (bahaya)
+- Menghancurkan fokus aplikasi
+
+Kita buat teman kecil, bukan makhluk maha tahu.
+
+========
+TIDAK selalu aktif bicara sendiri
+========
+Yang tidak dibuat:
+- Chibi sering menyela
+- Komentar tiap menit
+- “Eh kamu ngapain?” tanpa konteks
+
+Alasan:
+- Menyebalkan
+- Mengganggu fokus
+- Membuat user mematikan aplikasinya
+
+Chibi diam adalah bentuk kepedulian.
+
+========
+TIDAK mengunci desktop/memaksa perilaku
+========
+Yang tidak dibuat:
+- Lock screen paksa
+- Blok aplikasi lain
+- “Kamu harus berhenti sekarang”
+
+Alasan:
+- Bertentangan dengan nilai non-penekanan
+- User dewasa ≠ anak kecil
+- Mengundang uninstall cepat
+
+Chibi mengajak, bukan memerintah.
+
+========
+TIDAK menjadi asisten sistem level admin
+========
+Yang tidak dibuat:
+- Akses file sensitif
+- Monitoring keyboard terus-menerus
+- Rekam layar diam-diam
+
+Alasan:
+- Isu privasi
+- Kepercayaan rusak
+- Kompleksitas melonjak
+
+Companion hadir, bukan mengintai.
+
+========
+TIDAK desain visual berlebihan di awal
+========
+
+Yang tidak dibuat:
+- 50 animasi
+- Customisasi ekstrem
+- Physics lucu-lucuan
+
+Alasan:
+- Menguras waktu
+- Mengalihkan fokus fungsi inti
+- Sulit dirawat
+
+Gerak sedikit tapi hidup lebih baik dari megah tapi kosong.
+
+"Jika fitur tidak membuat pengguna lebih sehat, lebih sadar waktu, atau lebih nyaman, maka tidak dibuat."

@@ -1,0 +1,60 @@
+========
+TIDAK berbicara saat:
+========
+- User tidak berinteraksi sama sekali selama periode tenang
+   -> chibi diam/idle/tidur
+- User sedang fokus (tidak klik chibi, tidak buka setting)
+- User baru saja diberi pesan < 10 menit lalu
+- User menutup balon dialog secara manual
+- User mematikan reminder tertentu
+
+Prinsip:
+Satu pesan = satu niat.
+Tidak diulang, tidak dikejar.
+
+==========
+2. TIDAK berbicara dengan:
+==========
+- Nada menghakimi
+- Nada menyuruh
+- Nada “kamu salah”
+- Nada sok tahu kesehatan
+- Nada sok dekat berlebihan
+
+Kalimat terlarang contoh:
+- “Ini tidak sehat”
+- “Kamu harus berhenti”
+- “Sudah saya ingatkan”
+
+
+========
+3. TIDAK berbicara tentang:
+========
+- Kondisi mental
+- Penilaian hidup
+- Produktivitas
+- Moral
+- Target pribadi
+
+Chibi bukan konselor.
+
+==========
+TIDAK berbicara di jam sensitif:
+==========
+- Malam larut -> frekuensi dikurangi drastis
+- Pagi awal -> tanpa reminder layar
+- Setelah user klik “diam dulu” (jika ada)
+
+==========
+TIDAK menjelaskan dirinya sendiri
+==========
+Tidak pernah:
+- “Aku dibuat untuk mengingatkanmu”
+- “Fiturku adalah…”
+- “Tugasku sebagai asisten…”
+
+Dia ada, bukan presentasi produk.
+
+"Jika ragu apakah perlu bicara -> DIAM"
+
+

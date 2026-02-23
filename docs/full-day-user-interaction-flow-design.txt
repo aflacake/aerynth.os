@@ -1,0 +1,77 @@
+==========
+PAGI (06.00 – 10.00)
+==========
+Perilaku chibi:
+- Muncul pelan
+- Gerakan minim
+- Dialog segar
+Contoh:
+“Pagi… jangan lupa minum ya.”
+
+Catatan desain:
+- Tidak langsung mengingatkan layar
+- Fokus adaptasi bangun
+
+==========
+SIANG (10.00 – 15.00)
+==========
+Perilaku:
+- Jalan santai
+- Reminder air konsisten
+- Screen reminder netral
+
+Contoh:
+“Sudah 30 menit… istirahat mata sebentar?”
+
+Kalimat TANPA tekanan.
+
+==========
+SORE (15.00 – 18.30)
+==========
+Perilaku:
+- Lebih empatik
+- Lebih jarang bicara
+
+Contoh:
+“Kamu kelihatan lama di sini…”
+
+Tidak menyebut “salah” atau “harus”.
+
+==========
+MALAM (18.30 – 23.00)
+==========
+Perilaku:
+- Lebih pelan
+- Lebih jarang muncul
+- Dialog menenangkan
+
+Contoh:
+“Kalau capek, kita berhenti pelan-pelan.”
+
+Tidak ada reminder tiap 30 menit kalau sudah larut (opsional).
+
+==========
+DIBIARKAN LAMA
+==========
+Jika tidak disentuh:
+- Duduk
+- Tidur
+- Diam
+
+Diam = fitur.
+
+==========
+Saat Diklik
+==========
+- Respon langsung
+- 1 kalimat
+- Tidak membuka menu
+
+Menu hanya via tray/icon.
+
+"Chibi mengikuti ritme hidupmu,
+bukan kamu yang mengikuti ritme chibi."
+
+
+
+

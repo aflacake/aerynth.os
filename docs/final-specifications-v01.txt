@@ -1,0 +1,143 @@
+========
+Tujuan Versi
+========
+- Menjadi teman kecil pasif di desktop Windows yang:
+- Mengingatkan waktu layar
+- Mengingatkan minum air
+- Hadir secara visual
+- Tidak mengganggu, tidak memaksa
+
+Jika tujuan ini melenceng -> versi dianggap gagal.
+
+========
+Karakter & Kepribadian
+========
+- 1 chibi PETIT dewasa
+- 1 kepribadian
+- Nada:
+   - Lembut
+   - Netral
+   - Tidak menghakimi
+- Lebih memilih diam daripada bicara salah
+
+Tidak ada:
+- Variasi karakter
+- Emosi kompleks
+- Sistem mood lanjutan
+
+==========
+Tampilan & Perilaku Visual
+==========
+- Window:
+   - Borderless
+   - Transparan
+   - Always-on-top
+- Perilaku:
+   - Idle (diam)
+   - Jalan pelan kiri–kanan
+   - Duduk / tidur saat lama tidak disentuh
+- Interaksi:
+   - Klik → 1 balon dialog singkat
+- Tidak ada:
+   - Kostum
+   - Skin
+   - Drag physics kompleks
+   - Efek visual berlebihan
+
+========
+Fitur Inti (WAJIB)
+========
+--------
+1. Reminder Waktu Layar
+--------
+- Interval: 30 menit
+- Bentuk:
+   - Balon dialog
+   - 1 kalimat
+   - Hilang otomatis
+- Nada: mengajak, bukan menyuruh
+- Tidak ada:
+   - Lock screen
+   - Paksaan
+   - Statistik waktu
+   
+--------
+2. Reminder Minum Air
+--------
+- Interval: 15 menit
+- Isi: “minum air putih ±150–200 ml”
+- Tanpa tracking konsumsi
+
+--------
+3. Interaksi Manual
+--------
+- Klik chibi → dialog netral acak
+- Tidak ada chat panjang
+- Tidak ada pertanyaan lanjutan
+
+========
+Aturan Diam (HARUS)
+========
+Chibi TIDAK berbicara jika:
+- Sudah berbicara < 10 menit lalu
+- User menutup balon dialog
+- User tidak berinteraksi
+- Malam larut (frekuensi sangat dikurangi)
+- Reminder terkait dimatikan
+
+Jika ragu -> DIAM.
+
+========
+Batas Emosi (DIKUNCI)
+========
+Chibi TIDAK:
+- Menganalisis perasaan
+- Menanggapi emosi berat
+- Memberi nasihat psikologis
+- Menjadi tempat curhat panjang
+- Membangun ketergantungan emosional
+
+Respon maksimum pada emosi berat:
+“Aku di sini.”
+
+Tidak ada lanjutan.
+
+========
+Pengaturan (MINIMAL)
+========
+- ON/OFF reminder layar
+- ON/OFF reminder minum
+- Keluar aplikasi
+
+Tidak ada:
+- Profil
+- Akun
+- Sinkronisasi
+- Cloud
+
+========
+Privasi
+========
+- Berjalan lokal
+- Tidak merekam
+- Tidak mengintai
+- Tidak mengumpulkan data pribadi
+
+========
+Secara Sadar TIDAK Masuk v0.1
+========
+- Microphone
+- Voice chat
+- AI generatif
+- Multiple chibi
+- Statistik & grafik
+- Achievement
+- Update konten online
+
+========
+Kriteria Sukses v0.1
+========
+Versi dianggap berhasil jika:
+
+Aplikasi dibiarkan berjalan 1 hari penuh
+tanpa keinginan untuk dimatikan.

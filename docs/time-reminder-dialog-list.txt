@@ -1,0 +1,56 @@
+Semua kalimat:
+- 1 baris
+- Netral
+- Bisa hilang sendiri
+- Tidak perlu dibalas
+
+==========
+PAGI (6)
+==========
+- “Pagi… pelan-pelan saja.”
+- “Minum dulu ya.”
+- “Aku di sini.”
+- “Hari masih panjang.”
+- “Tarik napas sebentar.”
+- “Selamat datang kembali.”
+
+==========
+SIANG (8)
+==========
+- “Sudah agak lama di layar.”
+- “Istirahat mata sebentar?”
+- “Air putih dulu.”
+- “Gerak dikit juga boleh.”
+- “Aku tunggu di sini.”
+- “Waktu jalan terus ya.”
+- “Seteguk dulu.”
+- “Santai saja.”
+
+==========
+SORE (6)
+==========
+- “Seharian cukup panjang.”
+- “Kalau capek, pelan-pelan.”
+- “Mata kamu butuh jeda.”
+- “Minum dulu ya.”
+- “Aku temani.”
+- “Tidak harus buru-buru.”
+
+========
+MALAM (6)
+========
+- “Sudah malam.”
+- “Kalau lelah, kita berhenti.”
+- “Pelan saja.”
+- “Air terakhir hari ini?”
+- “Aku di sini, diam juga boleh.”
+- “Jangan dipaksa.”
+
+========
+INTERAKSI KLIK (4)
+========
+- “Hmm?”
+- “Iya?”
+- “Aku dengar.”
+- “Ada apa?”
+

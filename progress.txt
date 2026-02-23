@@ -1,0 +1,15 @@
+=== UPDATE ===
+23/02/26 [COMPLETE]
+- Menentukan kepribadian si chibi [COMPLETE]
+   - Menulis dokumen “Janji Chibi ke Pengguna” (1 halaman) [COMPLETE]
+   - Menentukan batas emosi (apa yang tidak akan ia tanggapi) [COMPLETE]
+- Menentukan scope versi 0.1 (MVP) [COMPLETE]
+- Mendesain alur interaksi pengguna sehari penuh [COMPLETE]
+   - Menulis dokumen spesifikasi v0.1 satu halaman [COMPLETE]
+   - Menyusun daftar dialog waktu & reminder (±30 kalimat) [COMPLETE]
+   - Menentukan aturan “kapan TIDAK berbicara” secara eksplisit [COMPLETE]
+- Menentukan apa yang TIDAK akan dibuat (sangat penting) [COMPLETE]
+
+=== REPAIR ====
+
+=== DELETE ===

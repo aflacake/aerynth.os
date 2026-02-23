@@ -1,0 +1,89 @@
+==========
+Tujuan Tunggal MVP
+==========
+Menjadi teman kecil yang:
+- Mengingatkan waktu layar
+- Mengingatkan minum
+- Hadir secara visual
+- Tidak mengganggu
+
+Tidak lebih.
+
+========
+Fitur WAJIB di v0.1
+========
+--------
+Chibi PET tampil di desktop
+--------
+- 1 karakter
+- 1 ukuran
+- 1 gaya visual
+- Always-on-top
+- Bisa:
+   - Jalan pelan kiri-kanan
+   - Idle (diam)
+Tidak ada kostum. Tidak ada skin.
+   
+----------
+Timer waktu layar (pasif)
+----------
+- Hitung waktu aktif desktop
+- Trigger 1 pesan tiap 30 menit
+- Pesan:
+   - Balon dialog
+   - 1 kalimat
+   - Hilang sendiri
+
+Tanpa:
+- Log statistik
+- Grafik
+- Riwayat
+
+--------
+Reminder minum air
+--------
+- Interval tetap (15 menit)
+- Volume hanya teks (“sekitar 150–200 ml”)
+- 1 kalimat ringan
+
+Tidak ada:
+- Tracking air
+- Target harian
+- Achievement
+
+----------
+Interaksi manual (klik)
+----------
+- Klik chibi -> muncul 1 balon dialog acak
+- Dialog:
+   - Menenangkan
+   - Netral
+   - Tidak analitis
+
+Tidak ada chat panjang.
+
+--------
+Settings minimal
+- ON/OFF reminder layar
+- ON/OFF reminder air
+- Keluar aplikasi
+- Selesai.
+--------
+
+==========
+Yang SECARA SADAR tidak masuk v0.1
+==========
+Ini penting ditulis:
+- Microphone
+- Chat bebas
+- Mood kompleks
+- Auto update dialog online
+- Multiple chibi
+- Statistik
+
+==========
+SUKSES
+==========
+Apabila:
+"Membiarkannya hidup 1 hari penuh tanpa ingin mematikannya."
+
