@@ -1,0 +1,66 @@
+========
+Daftar State
+========
+----------
+S0 — IdleAware
+----------
+- Default saat Rynth aktif
+- Pose: aware-and-idle-still-pose
+- Bisa berpindah ke jalan, diam, atau respon klik
+
+----------
+S1 — IdleSilent
+----------
+- Mode “diam sadar”
+- Pose: silent-idle-pose
+- Digunakan saat aturan diam aktif
+
+----------
+S2 — IdleBlink
+----------
+- Variasi visual idle
+- Pose: silent-pose-aware-and-idle-blinking
+- Tidak mengubah logika, hanya kosmetik
+
+----------
+S3 — Walking
+----------
+- Bergerak ke target acak
+- Pose: right-and-left-walking-pose
+- Tidak bicara
+
+--------
+S4 — ClickedResponse
+--------
+- Respon langsung saat diklik
+- Pose: clicked-pose
+- Durasi singkat
+
+--------
+S5 — LightHappy
+--------
+- Respon positif ringan (klik + dialog netral)
+- Pose: light-happy-response-pose
+- Tidak sering muncul
+
+--------
+S6 — Sitting
+--------
+- Idle panjang
+- Pose: sitting-pose
+- Tidak bicara
+
+--------
+S7 — Sleeping
+--------
+- Idle sangat panjang / malam
+- Pose: sleeping-pose
+- Hampir tidak pernah bicara
+
+IdleAware
+ ├─(random idle timer)→ IdleBlink → IdleAware
+ ├─(random move trigger)→ Walking → IdleAware
+ ├─(no interaction long)→ Sitting → Sleeping
+ ├─(click)→ ClickedResponse → LightHappy → IdleAware
+ ├─(rule: silence active)→ IdleSilent → IdleAware
+ └─(night + idle long)→ Sleeping → IdleAware

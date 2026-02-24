@@ -1,0 +1,52 @@
+rynth/
+├─ assets/
+│  └─ sprites/
+│     ├─ aware-and-idle-still-pose.png
+│     ├─ clicked-pose.png
+│     ├─ light-happy-response-pose.png
+│     ├─ right-and-left-walking-pose.png
+│     ├─ silent-idle-pose.png
+│     ├─ sitting-pose.png
+│     ├─ sleeping-pose.png
+│     └─ silent-pose-aware-and-idle-blinking.png
+│
+├─ data/
+│  └─ dialog_en_us.txt
+│
+├─ src/
+│  ├─ main.cpp
+│  ├─ app/
+│  │  ├─ Application.h / .cpp
+│  │  ├─ AppConfig.h
+│  │
+│  ├─ core/
+│  │  ├─ Timer.h / .cpp
+│  │  ├─ ScreenTimeTracker.h / .cpp
+│  │  ├─ ReminderManager.h / .cpp
+│  │
+│  ├─ rynth/
+│  │  ├─ Rynth.h / .cpp
+│  │  ├─ RynthState.h
+│  │  ├─ RynthMovement.h / .cpp
+│  │
+│  ├─ ui/
+│  │  ├─ ChibiWindow.h / .cpp
+│  │  ├─ SpeechBubble.h / .cpp
+│  │
+│  └─ util/
+│     ├─ Random.h
+│     ├─ TimeUtil.h
+│
+├─ include/
+│
+├─ README.md
+├─ ABOUT.md   ← **Janji Chibi ke Pengguna (English-US)**
+└─ Makefile
+
+Ringkasan Keras (Supaya Tidak Melebar)
+- SDL2 adalah pilihan final
+- Struktur proyek dikunci
+- Gerak Rynth bebas tapi tenang
+- 8 sprite = cukup
+- MSYS kompatibel
+- Tidak ada fitur tambahan

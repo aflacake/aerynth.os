@@ -1,4 +1,12 @@
 === UPDATE ===
+24/02/26 [--]
+- Menamai chibi & identitas visual final [COMPLETE]
+- Menentukan state internal minimal (idle/remind/sleep) [COMPLETE]
+- Mengunci spesifikasi v0.1 (final, satu halaman) [COMPLETE]
+- State internal & transition diagram (final) [COMPLETE]
+- Movement logic detail (random walk + idle rules)
+- Event loop aplikasi (tanpa detail kode dulu)
+
 23/02/26 [COMPLETE]
 - Menentukan kepribadian si chibi [COMPLETE]
    - Menulis dokumen “Janji Chibi ke Pengguna” (1 halaman) [COMPLETE]

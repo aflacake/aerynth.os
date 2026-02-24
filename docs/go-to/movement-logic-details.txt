@@ -1,0 +1,83 @@
+(Random Walk + Idle Rules — TENANG & ALAMI)
+
+==========
+Konsep Inti
+==========
+Rynth tidak patroli, tidak gelisah, tidak bolak-balik mekanis.
+
+Ia:
+- Memilih tujuan
+- Bergerak pelan
+- Berhenti
+- Diam
+
+========
+Area Gerak
+========
+- Screen space = (0,0) → (screen_w - sprite_w, screen_h - sprite_h)
+- Margin aman: ±20 px
+- Tidak pernah keluar layar
+
+========
+Target Selection (Random Walk)
+========
+1. Setiap T_move_interval (mis. 8–20 detik acak):
+2. Pilih target (tx, ty) secara acak
+3. Jarak minimum:
+   - Jika terlalu dekat → batalkan
+4. Jarak maksimum:
+   - Setengah layar (biar tidak lompat jauh)
+
+========
+Movement Execution
+========
+- Kecepatan: konstan & lambat
+- Arah:
+   - X dan Y boleh berubah (bebas, tidak cuma kiri–kanan)
+- Update posisi tiap frame:
+   - Mendekati target
+- Sampai target:
+   - Masuk IdleAware
+Tidak ada easing dramatis. Linear cukup.
+
+========
+Idle Rules (PALING PENTING)
+========
+--------
+Idle Timer Levels
+--------
+Durasi tanpa interaksi | State
+0–30 detik | IdleAware / IdleBlink
+30–120 detik | Sitting
+>120 detik | Sleeping
+
+========
+Aturan Diam
+========
+Jika salah satu aktif:
+- Baru bicara < 10 menit
+- User menutup dialog
+- Malam larut
+
+Tidak ada dialog, hanya visual state.
+
+========
+Click Interaction (Override)
+========
+- Click selalu prioritas tertinggi
+- Menghentikan:
+   - Walking
+   - Sitting
+   - Idle
+
+Alur:
+Any State → ClickedResponse → LightHappy → IdleAware
+
+========
+Night Modifier
+========
+Saat malam:
+- Interval jalan lebih lama
+- Peluang tidur lebih besar
+- Dialog sangat jarang
+- Rynth terasa “ikut capek”.

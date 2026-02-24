@@ -1,0 +1,115 @@
+========
+Tujuan Event Loop
+========
+- Aplikasi ringan & stabil
+- Tidak boros CPU
+- Semua perilaku Rynth dikendalikan di satu loop utama
+- Tidak ada polling berlebihan
+
+========
+Struktur Loop (Konseptual)
+========
+Urutan TIDAK BOLEH ditukar:
+Initialize
+↓
+while (app is running)
+{
+    1. Process Input Events
+    2. Update Timers
+    3. Update Internal State
+    4. Update Movement (if any)
+    5. Render Frame
+    6. Delay / Yield
+}
+↓
+Cleanup & Exit
+
+========
+Process Input Events
+========
+Sumber:
+- Mouse click pada chibi
+- Window close
+- Tray menu (exit, settings)
+
+Aturan keras:
+- Click selalu prioritas tertinggi
+- Click:
+   - Memotong state apa pun
+   - Memicu ClickedResponse
+
+Tidak ada:
+- Keyboard global hook
+- Background spying
+
+========
+Update Timers
+========
+Semua berbasis delta time, bukan frame count.
+
+Timer minimal:
+- idleTimer -> deteksi duduk / tidur
+- movementTimer -> kapan pilih target baru
+- screenTimeTimer -> reminder 30 menit
+- waterTimer -> reminder 15 menit
+- dialogCooldownTimer -> aturan diam
+
+Timer tidak pernah:
+- Memicu dialog langsung
+- Mengubah state visual langsung
+
+Timer hanya mengajukan niat, bukan eksekusi.
+
+========
+Update Internal State
+========
+State machine yang sudah dikunci sebelumnya bekerja di sini.
+
+Urutan evaluasi:
+1. Click override?
+2. Silence rule aktif?
+3. Night modifier?
+4. Idle duration?
+5. Movement trigger?
+
+Jika konflik -> pilih state paling tenang.
+
+Default fallback:
+IdleAware
+
+========
+Update Movement
+========
+Jika state = Walking:
+- Gerakkan posisi (x, y) ke (tx, ty)
+- Jika target tercapai:
+   - State -> IdleAware
+   - Reset idle timer
+
+Jika bukan Walking:
+- Tidak ada perubahan posisi
+
+========
+Render Frame
+========
+Render 1 sprite saja per frame.
+
+Urutan:
+1. Clear transparent buffer
+2. Draw sprite sesuai state
+3. Draw speech bubble (jika aktif)
+4. Present frame
+
+Tidak ada:
+- Layered animation kompleks
+- Shader
+- Efek berat
+
+========
+Delay/Yield
+========
+- Batasi frame rate (mis. ~60 fps atau lebih rendah)
+- Tujuan: CPU idle saat tidak ada perubahan
+
+Rynth lebih sering diam daripada bergerak → ini penting.
+

@@ -1,0 +1,106 @@
+========
+Reminder Scheduler Logic
+========
+(Screen Time + Water)
+
+Ini bukan fitur UI, ini mesin keputusan.
+
+========
+Prinsip Scheduler
+========
+- Reminder tidak memaksa
+- Reminder tidak berulang
+- Reminder bisa ditolak secara diam
+
+========
+Screen Time Reminder (30 menit)
+========
+--------
+Cara Hitung
+--------
+- Hitung durasi aplikasi aktif
+- Reset timer jika:
+   - Aplikasi ditutup
+   - Sistem sleep
+   - User disable fitur
+
+Tidak perlu:
+- Deteksi aplikasi lain
+- Deteksi produktivitas
+
+========
+Trigger Rule
+========
+Jika:
+- screenTime >= 30 min
+- AND dialogCooldown == false
+- AND silenceRule == false
+- AND nightModifier != strict
+
+Ajukan reminder
+
+========
+Eksekusi Reminder
+========
+- Tampilkan 1 dialog
+- Durasi singkat
+- Setelah tampil:
+   - Reset screen timer
+   - Aktifkan dialogCooldown (≥10 menit)
+
+Jika user:
+- Menutup dialog -> tidak diulang
+- Mengabaikan -> dianggap selesai
+
+========
+Water Reminder (15 menit)
+========
+--------
+Cara Hitung
+--------
+- Timer berjalan terus selama app aktif
+- Tidak peduli interaksi
+
+========
+Trigger Rule
+========
+Jika:
+- waterTimer >= 15 min
+- AND dialogCooldown == false
+- AND silenceRule == false
+
+Ajukan reminder air
+
+========
+Aturan Tambahan
+========
+- Jika screen reminder baru saja muncul:
+   - Water reminder ditunda
+- Tidak boleh dua dialog berdekatan
+
+========
+Dialog Cooldown (ATURAN EMAS)
+========
+Setelah dialog apa pun muncul:
+- Cooldown aktif (mis. 10 menit)
+- Selama ini:
+   - Tidak ada dialog baru
+   - Hanya visual idle
+
+Ini mencegah:
+- Cerewet
+- Spam
+- Uninstall
+
+========
+Night Modifier (Scheduler Impact)
+========
+Saat malam:
+- Screen reminder:
+   - Jarang atau nonaktif
+- Water reminder:
+   - Tetap ada, tapi lebih jarang
+
+Nada dialog:
+- Lebih pendek
+- Lebih lembut
