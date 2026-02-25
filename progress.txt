@@ -1,4 +1,13 @@
 === UPDATE ===
+25/02/26 [--]
+- Window transparan + sprite tampil [COMPLETE]
+- Load 8 sprite dengan benar [COMPLETE]
+- State -> sprite switch [COMPLETE]
+- Random movement logic [COMPLETE]
+- Click -> dialog bubble [COMPLETE]
+- Timer reminder (screen & water)
+- About/First-run screen
+
 24/02/26 [--]
 - Menamai chibi & identitas visual final [COMPLETE]
 - Menentukan state internal minimal (idle/remind/sleep) [COMPLETE]

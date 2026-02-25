@@ -18,6 +18,13 @@ Install SDL2_image (PNG support):
 pacman -S mingw-w64-x86_64-SDL2_image
 ```
 
+Make sure the mingw-w64-x86_64-SDL2_ttf package is installed in MinGW-w64:
+```
+pacman -S mingw-w64-x86_64-SDL2_ttf
+```
+> Make sure the compile command has `-IC:/msys64/mingw64/include/SDL2`
+
+
 ### Check Installation
 Run:
 ```
@@ -30,7 +37,10 @@ If the flags (`-I`, `-L`, `-lSDL2`) appear -> SUCCESSFUL.
 g++ -std=c++17 \
 src/main.cpp \
 src/app/Application.cpp \
--lmingw32 -lSDL2main -lSDL2 -lSDL2_image \
+src/ui/SpeechBubble.cpp \
+-IC:/msys64/mingw64/include/SDL2 \
+-LC:/msys64/mingw64/lib \
+-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf \
 -o rynth.exe
 ```
 > Run in the same shell (MinGW64)

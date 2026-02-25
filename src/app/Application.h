@@ -1,10 +1,23 @@
 #pragma once
-#include <SDL.h>
-#include <stdbool.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <map>
+#include <string>
+#include "../ui/SpeechBubble.h"
 
 class Application
 {
+enum class RynthState {
+    IdleAware,
+    IdleBlink,
+    Walking,
+    Sitting,
+    Sleeping,
+    ClickedResponse,
+    LightHappy,
+    IdleSilent
+};
+
 public:
     Application();
     ~Application();
@@ -33,4 +46,12 @@ private:
 	SDL_Texture* testSprite = nullptr;
 	int spriteW = 0;
 	int spriteH = 0;
+	
+	SDL_Rect dst = {0, 0, 0, 0};
+	
+	std::map<std::string, SDL_Texture*> sprites;
+	
+	RynthState currentState = RynthState::IdleAware;
+	
+	SpeechBubble bubble;
 };
