@@ -1,4 +1,4 @@
-rynth/
+aerynth.os/
 ├─ assets/
 │  └─ sprites/
 │     ├─ aware-and-idle-still-pose.png

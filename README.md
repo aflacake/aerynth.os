@@ -37,6 +37,10 @@ If the flags (`-I`, `-L`, `-lSDL2`) appear -> SUCCESSFUL.
 g++ -std=c++17 \
 src/main.cpp \
 src/app/Application.cpp \
+src/core/ReminderManager.cpp \
+src/rynth/Rynth.cpp \
+src/rynth/RynthMovement.cpp \
+src/ui/ChibiWindow.cpp \
 src/ui/SpeechBubble.cpp \
 -IC:/msys64/mingw64/include/SDL2 \
 -LC:/msys64/mingw64/lib \
