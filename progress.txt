@@ -5,7 +5,7 @@
 - State -> sprite switch [COMPLETE]
 - Random movement logic [COMPLETE]
 - Click -> dialog bubble [COMPLETE]
-- Timer reminder (screen & water)
+- Timer reminder (screen & water) [CHECKING]
 - About/First-run screen
 
 24/02/26 [--]

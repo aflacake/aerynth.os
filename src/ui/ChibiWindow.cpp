@@ -14,6 +14,7 @@ bool Application::initialize()
     // Set hint sebelum membuat window
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
 
+	float scale = 0.5f;
 	window = SDL_CreateWindow(
 		"Rynth",
 		SDL_WINDOWPOS_CENTERED,
@@ -31,7 +32,6 @@ bool Application::initialize()
 	);
 	
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-	SDL_SetHint(SDL_HINT_VIDEO_X11_NET_WM_BYPASS_COMPOSITOR, "0"); // untuk transparansi di Windows
 
 	if (!renderer)
 		return false;
@@ -55,11 +55,22 @@ bool Application::initialize()
 	testSprite = SDL_CreateTextureFromSurface(renderer, surface);
 	spriteW = surface->w;
 	spriteH = surface->h;
+	int winW = static_cast<int>(spriteW * scale);
+	int winH = static_cast<int>(spriteH * scale);
+	
+	window = SDL_CreateWindow(
+		"Rynth",
+		SDL_WINDOWPOS_CENTERED,
+		SDL_WINDOWPOS_CENTERED,
+		winW,
+		winH,
+		SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP
+	);
 	
 	dst.x = 0;
 	dst.y = 0;
-	dst.w = spriteW;
-	dst.h = spriteH;
+	dst.w = static_cast<int>(spriteW * scale);
+	dst.h = static_cast<int>(spriteH * scale);
 
 	SDL_FreeSurface(surface);
 
@@ -79,8 +90,11 @@ bool Application::initialize()
 
 	// Set default sprite
 	testSprite = sprites["idle"];
-	spriteW = w;
-	spriteH = h;
+	
+	currentState = RynthState::Walking;      // baseline: selalu hidup
+	overlayState = RynthState::IdleAware;    // tidak ada overlay
+	overlayTimer = 0.0f;
+	idleTimer = 0.0f;
 
 	return true; // pindahkan ke akhir setelah semua sukses
 }
@@ -99,31 +113,23 @@ void Application::render()
 {
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-	SDL_RenderClear(renderer);
+    SDL_RenderClear(renderer);
 
-	int winW, winH;
-	SDL_GetWindowSize(window, &winW, &winH);
+    int winW, winH;
+    SDL_GetWindowSize(window, &winW, &winH);
 
-	this->dst.x = 0;
-	this->dst.y = 0;
-	this->dst.w = winW;
-	this->dst.h = winH;
-	
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0); // alpha 0 → transparan
-	SDL_RenderClear(renderer);
+    SDL_Texture* activeSprite = testSprite;
 
-	SDL_RenderCopy(renderer, testSprite, nullptr, &dst);
-	
-	// contoh sederhana: tampilkan bubble saat ClickedResponse
-	if (currentState == RynthState::ClickedResponse) {
-		// nanti diganti dengan class SpeechBubble
-		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 200);
-		SDL_Rect bubble = { 10, 10, 120, 40 };
-		SDL_RenderFillRect(renderer, &bubble);
-	}
-	
-	bubble.update();
-	bubble.render(renderer, 20, 20);
+    dst.w = spriteW;
+    dst.h = spriteH;
+	dst.x = 0;
+	dst.y = 0;
 
-	SDL_RenderPresent(renderer);
+    // FULL TEXTURE, TANPA POTONG
+    SDL_RenderCopy(renderer, activeSprite, nullptr, &dst);
+
+    bubble.update();
+    bubble.render(renderer, 20, 20);
+
+    SDL_RenderPresent(renderer);
 }

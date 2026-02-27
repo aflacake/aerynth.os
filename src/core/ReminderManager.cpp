@@ -1,6 +1,7 @@
 #include "ReminderManager.h"
 #include "../app/Application.h"
 #include "../rynth/RynthState.h"
+#include <ctime>
 #include <SDL.h>
 #include <cstdlib>
 
@@ -25,16 +26,33 @@ void Application::updateTimers(float) {
 	
 	static Uint32 lastScreenReminder = SDL_GetTicks();
 	static Uint32 lastWaterReminder = SDL_GetTicks();
+	
+	// Ambil waktu sekarang (jam)
+	time_t t = time(nullptr);
+	tm* nowTm = localtime(&t);
+	int hour = nowTm->tm_hour;
+
+	// Pilih dialog sesuai jam
+	std::string line;
+	if (hour >= 6 && hour < 10) {
+		line = "Good morning… take it slow.";
+	} else if (hour >= 10 && hour < 15) {
+		line = "You've been at the screen for a while.";
+	} else if (hour >= 15 && hour < 18) {
+		line = "It's been a long day…";
+	} else if (hour >= 18 && hour < 23) {
+		line = "If you're tired, let's slow down.";
+	}
 
 	// Reminder layar tiap 30 menit
-	if (now - lastScreenReminder > 1800000) {
-		bubble.show("Sudah 30 menit, yuk rehat sejenak.", 5000);
-		lastScreenReminder = now;
+	if (SDL_GetTicks() - lastScreenReminder > 1800000) {
+		bubble.show(line, 5000); // gunakan dialog sesuai jam
+		lastScreenReminder = SDL_GetTicks();
 	}
 
 	// Reminder minum air tiap 15 menit
-	if (now - lastWaterReminder > 900000) {
-		bubble.show("Minum air putih ±150–200 ml.", 5000);
-		lastWaterReminder = now;
+	if (SDL_GetTicks() - lastWaterReminder > 900000) {
+		bubble.show("Drink water ±150–200 ml.", 5000);
+		lastWaterReminder = SDL_GetTicks();
 	}
 }

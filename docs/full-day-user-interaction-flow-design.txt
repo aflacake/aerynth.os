@@ -53,7 +53,7 @@ Tidak ada reminder tiap 30 menit kalau sudah larut (opsional).
 ==========
 DIBIARKAN LAMA
 ==========
-Jika tidak disentuh:
+Jika tidak disentuh selama 2 menit:
 - Duduk
 - Tidur
 - Diam
