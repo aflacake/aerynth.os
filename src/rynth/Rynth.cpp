@@ -17,17 +17,17 @@ void Application::updateState(float deltaTime)
     }
 
     // =========================
-    // 2. IDLE TIMER (2 MENIT)
+    // 2. IDLE TIMER (50 detik)
     // =========================
     idleTimer += deltaTime / 1000.0f;
 
-    if (idleTimer >= 120.0f && overlayTimer <= 0.0f
-		&& currentState == RynthState::Walking)   // ⬅ TAMBAHAN PENTING
-	{
+	if (idleTimer >= 50.0f && overlayTimer <= 0.0f) {
 		int r = rand() % 3;
 		if (r == 0) currentState = RynthState::Sitting;
 		else if (r == 1) currentState = RynthState::Sleeping;
 		else currentState = RynthState::IdleAware;
+
+		idleTimer = 0.0f;
 	}
 
     // =========================
@@ -65,4 +65,12 @@ void Application::updateState(float deltaTime)
             testSprite = sprites["idle"];
             break;
     }
+	
+	// =========================
+	// 5. WINDOW RESIZE ON STATE CHANGE
+	// =========================
+	if (appMode != AppMode::About && currentState != lastState) {
+		updateWindowForState(currentState);
+		lastState = currentState;
+	}
 }

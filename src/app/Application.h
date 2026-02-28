@@ -9,6 +9,11 @@
 
 class Application {
 public:
+	enum class AppMode {
+		Normal,
+		About
+	};
+
     Application();
     ~Application();
 
@@ -16,6 +21,7 @@ public:
     void run();
     void updateTimers(float deltaTime);
     void updateState(float deltaTime);
+	void updateWindowForState(RynthState state);
     void updateMovement(float deltaTime);
     void render();
     void shutdown();
@@ -27,6 +33,7 @@ private:
 
 private:
 	std::vector<std::string> loadDialog(const std::string& filename);
+	std::string loadTextFile(const std::string& path);
 
     bool running = false;
     const int targetFPS = 60;
@@ -49,4 +56,13 @@ private:
 	
     std::map<std::string, SDL_Texture*> sprites;
     SpeechBubble bubble;
+	
+	RynthState lastState = RynthState::IdleAware;
+	
+	std::string aboutText;
+	
+	int aboutScrollY = 0;
+	const int aboutScrollSpeed = 20;
+	
+	AppMode appMode = AppMode::Normal;
 };
