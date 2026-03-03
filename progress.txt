@@ -1,20 +1,53 @@
 === UPDATE ===
-25/02/26 [--]
+1/03/26 [--]
+Tahap 3 — Dialog & Reminder [COMPLETE]
+- SpeechBubble.h
+- SpeechBubble.cpp
+- dialog_en_us.txt
+- ReminderManager.h
+- ReminderManager.cpp
+
+Tahap 2 — State & Movement [COMPLETE]
+- Rynth.h
+- Rynth.cpp
+- RynthState.h
+- RynthMovement.h
+- RynthMovement.cpp
+
+Tahap 1 — Fondasi [COMPLETE]
+- main.cpp
+- Application.h
+- Application.cpp
+- ChibiWindow.h
+- ChibiWindow.cpp
+
+Alpha v0.2 itu tentang:
+ROADMAP:
+1. Microphone (Sensor Pasif) [DONE]
+2. Chat Pendek (English US) [DONE]
+3. Mood Visual Mikro (Non-Emosional) [DONE]
+4. Auto Update Dialog Online (Read-Only) [TIDAK JADI]
+
+Tambahan (v0.1 develop, won't fix):
+- Random movement logic [DONE]
+- Window transparan + sprite tampil [DONE]
+
+25/02/26 [28/02/26]
 - Window transparan + sprite tampil [COMPLETE PLUS]
 - Load 8 sprite dengan benar [COMPLETE]
 - State -> sprite switch [COMPLETE PLUS]
 - Random movement logic [WONT FIX]
 - Click -> dialog bubble [COMPLETE PLUS]
-- Timer reminder (screen & water) [CHECKING]
+- Timer reminder (screen & water) [COMPLETE PLUS]
 - About/First-run screen [COMPLETE]
 
-24/02/26 [--]
+24/02/26 [1/03/26]
 - Menamai chibi & identitas visual final [COMPLETE]
 - Menentukan state internal minimal (idle/remind/sleep) [COMPLETE]
 - Mengunci spesifikasi v0.1 (final, satu halaman) [COMPLETE]
 - State internal & transition diagram (final) [COMPLETE]
-- Movement logic detail (random walk + idle rules)
-- Event loop aplikasi (tanpa detail kode dulu)
+- Movement logic detail (random walk + idle rules) [COMPLETE]
+- Event loop aplikasi (tanpa detail kode dulu) [COMPLETE]
 
 23/02/26 [COMPLETE]
 - Menentukan kepribadian si chibi [COMPLETE]

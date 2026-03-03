@@ -22,7 +22,7 @@ bool Application::initialize()
 		SDL_WINDOWPOS_CENTERED,
 		SDL_WINDOWPOS_CENTERED,
 		350, 600,
-		SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP
+		SDL_WINDOW_BORDERLESS | SDL_WINDOW_ALWAYS_ON_TOP | SDL_WINDOW_ALLOW_HIGHDPI
 	);
 
 	if (!window)
@@ -34,6 +34,11 @@ bool Application::initialize()
 	);
 	
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+	
+	// =========================
+	// ALPHA v0.2 — WINDOW TRANSPARENCY (WINDOW LEVEL)
+	// =========================
+	SDL_SetWindowOpacity(window, 1.0f);
 
 	if (!renderer)
 		return false;
@@ -50,9 +55,18 @@ bool Application::initialize()
 	if (TTF_Init() == -1) return false;
 	
 	// =========================
+	// ALPHA v0.2 — PASSIVE MICROPHONE SENSOR
+	// =========================
+	if (!micSensor.init()) {
+		// optional: log, tapi JANGAN fail aplikasi
+	}
+	
+	// =========================
 	// FIRST RUN – ABOUT MODE
 	// =========================
 	aboutText = loadTextFile("assets/about/ABOUT.md");
+	// alpha v0.2 — load dialog file
+	auto dialogLines = loadDialog("data/dialog_en_us.txt");
 	appMode = AppMode::About;
 	bool skipSpriteSizing = (appMode == AppMode::About);
 	SDL_SetWindowSize(window, 600, 400);
@@ -130,6 +144,11 @@ void Application::shutdown()
 	if (window) SDL_DestroyWindow(window);
 	IMG_Quit();
 	TTF_Quit();
+	// =========================
+	// ALPHA v0.2 — PASSIVE MIC CLEANUP
+	// =========================
+	micSensor.shutdown();
+	
 	SDL_Quit();
 }
 
@@ -200,9 +219,12 @@ void Application::render()
 		return; // STOP render normal
 	}
 	
+	// alpha v0.2 — clear transparent window
+	
     SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
     SDL_RenderClear(renderer);
+	
 
     int winW, winH;
     SDL_GetWindowSize(window, &winW, &winH);

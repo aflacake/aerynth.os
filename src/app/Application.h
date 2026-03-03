@@ -3,11 +3,18 @@
 #include <string>
 #include "../core/ReminderManager.h"
 #include "../rynth/RynthMovement.h"
+#include "../rynth/RynthVisual.h"
 #include "../rynth/Rynth.h"
 #include "../ui/ChibiWindow.h"
 #include "../ui/SpeechBubble.h"
+#include "../core/MicrophoneSensor.h"
 
 class Application {
+// ===================================
+// VERSION
+// ===================================
+static constexpr const char* APP_VERSION = "alpha v0.2";
+
 public:
 	enum class AppMode {
 		Normal,
@@ -63,6 +70,11 @@ private:
 	
 	int aboutScrollY = 0;
 	const int aboutScrollSpeed = 20;
+	
+	// alpha v0.2 — micro visual controller
+	RynthVisual visual;
+	
+	MicrophoneSensor micSensor;
 	
 	AppMode appMode = AppMode::Normal;
 };

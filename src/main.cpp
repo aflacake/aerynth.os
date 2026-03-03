@@ -1,5 +1,7 @@
 #include "app/Application.h"
 
+// Aerynth — alpha v0.2
+
 int main(int argc, char* argv[])
 {
     Application app;

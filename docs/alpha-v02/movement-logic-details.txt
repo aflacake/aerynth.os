@@ -1,0 +1,196 @@
+========
+MOVEMENT LOGIC DETAILS
+========
+
+Status dokumen:
+- Konseptual
+- Non-implementatif
+- Mengatur perilaku visual chibi
+- Berlaku untuk alpha v0.2 dan seterusnya
+
+Dokumen ini MENENTUKAN:
+- KAPAN chibi bergerak
+- KAPAN chibi diam
+- BUKAN bagaimana kode ditulis
+
+--------
+Tujuan Movement Logic
+--------
+Movement logic bertujuan untuk:
+- Memberi kesan hidup secara halus
+- Menjaga kehadiran visual tanpa gangguan
+- Menghindari perilaku gelisah/hiperaktif
+
+Jika movement terasa mencuri perhatian user,
+maka movement dianggap GAGAL.
+
+--------
+Prinsip Dasar
+--------
+1. Diam adalah keadaan default
+2. Bergerak adalah pengecualian
+3. Random TIDAK berarti sering
+4. Setiap gerakan harus punya "alasan waktu"
+5. Jika ragu → JANGAN bergerak
+
+--------
+Daftar State Perilaku
+--------
+Hanya SATU state aktif dalam satu waktu:
+
+- IDLE_STAND
+- WALK
+- IDLE_SIT
+- SLEEP
+
+State bukan emosi.
+State adalah posisi & aktivitas visual.
+
+--------
+STATE: IDLE_STAND
+--------
+Makna:
+- Hadir
+- Siaga pasif
+- Tidak menuntut perhatian
+
+Perilaku:
+- Diam berdiri
+- Animasi idle ringan/loop
+
+Masuk state ini jika:
+- Aplikasi baru berjalan
+- Dialog selesai
+- User baru klik
+- Movement selesai
+
+Durasi:
+- Paling sering muncul
+- Waktu acak dalam rentang panjang (puluhan detik)
+
+Keluar state ini:
+- Ke WALK -> jika cukup lama diam
+- Ke IDLE_SIT -> jika sangat lama tidak ada interaksi
+
+--------
+STATE: WALK
+--------
+Makna:
+- Gerakan ringan untuk mencegah kesan statis
+
+Aturan keras:
+- Hanya gerak kiri <-> kanan
+- Jarak pendek
+- Kecepatan pelan
+- Tidak bolak-balik cepat
+
+Flow konseptual:
+1. Tentukan arah (kiri/kanan)
+2. Tentukan jarak terbatas
+3. Bergerak pelan
+4. Berhenti
+5. Kembali ke IDLE_STAND
+
+Batasan:
+- Tidak keluar area layar
+- Tidak menyentuh tepi layar
+- Tidak aktif saat dialog muncul
+
+Frekuensi:
+- Jarang
+- Lebih jarang daripada idle
+
+--------
+STATE: IDLE_SIT
+--------
+Makna:
+- Pasif jangka panjang
+- Tidak aktif sosial
+
+Masuk state ini jika:
+- Tidak ada interaksi lama
+- Tidak ada klik
+- Tidak ada dialog aktif
+
+Perilaku:
+- Diam
+- Tidak berjalan
+- Tidak memulai interaksi
+
+Keluar state ini:
+- User klik -> IDLE_STAND
+- Waktu sangat lama -> SLEEP
+
+--------
+STATE: SLEEP
+--------
+Makna:
+- Pasif total
+- Kehadiran minimal
+
+Masuk state ini jika:
+- Sangat lama tanpa interaksi
+- Kondisi pasif berkepanjangan
+
+Perilaku:
+- Tidak bergerak
+- Tidak walk
+- Tidak idle shift
+
+Catatan:
+- Reminder tetap boleh muncul sesuai aturan diam
+
+Keluar state ini:
+- User klik -> bangun -> IDLE_STAND
+
+--------
+Aturan Anti-Gangguan
+--------
+Movement DILARANG jika:
+- Dialog bubble sedang tampil
+- Baru selesai berbicara
+- User baru menutup dialog
+- Reminder baru muncul
+
+Movement harus memberi ruang,
+bukan menyaingi perhatian.
+
+--------
+Randomness yang Dikontrol
+--------
+Random hanya digunakan untuk:
+- Menentukan WAKTU transisi
+- Menentukan ARAH
+- Menentukan JARAK pendek
+
+Random TIDAK digunakan untuk:
+- Frekuensi tinggi
+- Reaksi terhadap user
+- Sinkron dengan input
+
+--------
+Kriteria Keberhasilan Movement
+--------
+Movement dianggap berhasil jika:
+- User jarang menyadari kapan chibi bergerak
+- Tidak terasa gelisah
+- Tidak terasa seperti bug
+- Lebih sering terlihat diam daripada berjalan
+
+--------
+[alpha v0.2]
+--------
+Micro visual behavior:
+- Idle blinking (non-emotional)
+- Triggered only during IdleAware
+- Random, low frequency
+- Auto return to idle
+
+--------
+Catatan Penutup
+--------
+Chibi bukan objek animasi.
+Ia adalah kehadiran pasif.
+
+Movement terbaik adalah movement
+yang hampir tidak disadari.

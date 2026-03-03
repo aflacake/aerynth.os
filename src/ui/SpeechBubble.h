@@ -13,6 +13,9 @@ public:
 
     bool isActive() const;
 	
+	// alpha v0.2, dialog control
+	bool canSpeak() const;
+	
 	static const char* clickLines[4];
 	
 	void showPersistent(const std::string& text);

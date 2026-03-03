@@ -98,3 +98,8 @@ void SpeechBubble::render(SDL_Renderer* renderer, int x, int y) {
 bool SpeechBubble::isActive() const {
     return active;
 }
+
+bool SpeechBubble::canSpeak() const
+{
+    return !active;
+}

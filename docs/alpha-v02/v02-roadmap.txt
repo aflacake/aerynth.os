@@ -1,0 +1,135 @@
+========
+ALPHA v0.2 ROADMAP
+========
+
+Status dokumen:
+- Konseptual
+- Non-implementatif
+- Mengikat arah desain & perilaku
+- Berlaku sebelum fase "CODING"
+
+----------
+Tujuan utama alpha v0.2
+----------
+Alpha v0.2 bertujuan untuk:
+- Memperhalus perilaku chibi
+- Membuat kehadiran visual terasa lebih hidup
+- Menambah interaksi ringan TANPA menciptakan ketergantungan
+- Tetap setia pada prinsip: pasif, tidak memaksa, tidak menghakimi
+
+Alpha v0.2 BUKAN:
+- Versi fitur besar
+- Versi AI
+- Versi sosial / emosional
+- Versi personalisasi mendalam
+
+----------
+Fokus Pengembangan v0.2
+----------
+1. Refinement movement logic (random walk + idle rules)
+2. Micro-behavior visual (idle aware, blinking)
+3. Interaksi opsional yang sangat terbatas
+4. Konten dialog yang dapat diperbarui tanpa mengubah logika inti
+
+----------
+Fitur yang MASUK alpha v0.2
+----------
+----------
+1. Microphone (Sensor Pasif)
+----------
+- Digunakan sebagai sensor lingkungan sederhana
+- Tidak merekam
+- Tidak menyimpan data
+- Tidak melakukan speech recognition
+- Tidak ada voice chat
+
+Tujuan:
+- Memberi konteks lingkungan (sunyi/ada suara)
+- BUKAN media komunikasi
+
+----------
+2. Chat Pendek (English US)
+----------
+- Bahasa: English (US) saja
+- Panjang: 1–2 kalimat pendek
+- Respon bersifat statis/semi-statis
+- Tidak ada pertanyaan lanjutan
+- Tidak ada percakapan berantai
+- Tidak membahas emosi berat
+
+Catatan penting:
+- Chat adalah alternatif trigger dialog
+- Aplikasi harus tetap utuh walau fitur chat dimatikan
+
+----------
+3. Mood Visual Mikro (Non-Emosional)
+----------
+Contoh:
+- Blinking random saat idle aware
+- Switching sprite idle diam <-> idle blinking
+- Gerakan mikro yang jarang dan tidak sinkron dengan user
+
+Batasan:
+- Tidak merepresentasikan emosi (senang, sedih, marah)
+- Tidak bereaksi langsung terhadap user
+
+----------
+4. Auto Update Dialog Online (Read-Only)
+----------
+- Hanya memperbarui file dialog teks
+- Tidak mengubah logika aplikasi
+- Tidak ada tracking user
+- Tidak ada personalisasi konten
+- Fallback ke dialog lokal jika offline
+
+Filosofi:
+- Update konten ≠ cloud personality
+- Chibi tidak belajar dari user
+
+----------
+Fitur yang TIDAK MASUK alpha v0.2
+----------
+
+Secara sadar TIDAK diimplementasikan:
+
+- Multiple chibi
+- Statistik penggunaan
+- AI generatif
+- Analisis emosi user
+- Mood kompleks
+- Voice conversation
+- Chat panjang/riwayat chat
+- Profil user
+- Akun/sinkronisasi
+- Achievement/gamification
+
+Jika fitur di atas dibahas:
+- Itu BUKAN bagian dari alpha v0.2
+- Harus dianggap fase produk berbeda
+
+----------
+Prinsip Perilaku yang Tetap Dikunci
+----------
+- Chibi lebih sering diam daripada bergerak
+- Chibi tidak memancing interaksi
+- Chibi tidak menilai user
+- Chibi tidak menggantikan manusia
+- Jika ragu → DIAM
+
+----------
+Definisi Sukses alpha v0.2
+----------
+Alpha v0.2 dianggap berhasil jika:
+- Aplikasi terasa lebih hidup dari v0.1
+- Tidak menambah rasa terganggu
+- Tidak meningkatkan frekuensi interaksi paksa
+- User tetap nyaman membiarkannya berjalan lama
+
+----------
+Catatan Penutup
+----------
+Alpha v0.2 adalah tahap pendewasaan perilaku,
+bukan penambahan kecerdasan.
+
+Semakin terasa tenang dan konsisten,
+semakin berhasil versi ini.

@@ -60,7 +60,19 @@ void Application::run()
 		if (appMode == AppMode::Normal) {
 			updateTimers(deltaTime);
 			updateState(deltaTime);
+			visual.update(currentState, deltaTime);
 			updateMovement(deltaTime);
+			
+			// =========================
+			// ALPHA v0.2 — PASSIVE MIC SENSOR
+			// =========================
+			micSensor.update();
+
+			if (micSensor.isSoundDetected() &&
+				currentState == RynthState::IdleSilent)
+			{
+				currentState = RynthState::IdleAware;
+			}
 		}
 
 		render();
@@ -137,16 +149,19 @@ void Application::processEvents()
         // KLIK KIRI (INTERAKSI)
         // =========================
         if (event.type == SDL_MOUSEBUTTONDOWN &&
-            event.button.button == SDL_BUTTON_LEFT)
-        {
-            idleTimer = 0.0f; // ← SATU-SATUNYA TEMPAT RESET
+			event.button.button == SDL_BUTTON_LEFT)
+		{
+			idleTimer = 0.0f;
 
-            overlayState = RynthState::ClickedResponse;
-            overlayTimer = 3.0f;
+			// alpha v0.2 — click response
+			if (bubble.canSpeak()) {
+				overlayState = RynthState::ClickedResponse;
+				overlayTimer = 3.0f;
 
-            int r = rand() % 4;
-            bubble.show(SpeechBubble::clickLines[r], 3000);
-        }
+				int r = rand() % 4;
+				bubble.show(SpeechBubble::clickLines[r], 3000);
+			}
+		}
 
         // =========================
         // DRAG WINDOW (TIDAK RESET IDLE)
