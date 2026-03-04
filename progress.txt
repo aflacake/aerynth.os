@@ -1,5 +1,5 @@
 === UPDATE ===
-1/03/26 [--]
+1/03/26 [COMPLETE]
 Tahap 3 — Dialog & Reminder [COMPLETE]
 - SpeechBubble.h
 - SpeechBubble.cpp

@@ -1,5 +1,7 @@
 # Aerynth.os
 
+[![Download Aerynth.os](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/aerynth-os/files/latest/download)
+
 ## Contribution
 ### Install Toolchain
 If there is no compiler yet:
